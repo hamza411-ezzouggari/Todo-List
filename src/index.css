@@ -1,13 +1,142 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: rgb(216, 216, 216);
+}
+*{
+  color: rgb(0, 0, 0);
+}
+.Navbar{
+  margin: 3% 0px 0px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navbar{
+  width: 70%;
+  height: 4rem;
+  background-color: 	rgb(186,85,211);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+#title{
+  font-size: x-large;
+  width: 22rem;
+  height: 2rem;
+}
+#description{
+  font-size: x-large;
+  width: 22rem;
+  height: 2rem;
+}
+#notes{
+  font-size: x-large;
+  width: 22rem;
+  height: 2rem;
+}
+#date{
+  font-size: x-large;
+  width: 22rem;
+  height: 2rem;
+}
+.bu {
+  color: rgb(255,255,255);
+  font-size: x-large;
+  height: 3.5rem;
+  width: 13rem;
+  margin: 5% 0px 0px;
+  border-radius: 20px;
+  border-style: hidden;
+  outline: none;
+  margin: 20px 0px 10px 0px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bu:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(8px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.bu:active {
+  color: #000
+}
+
+.bu:active:after {
+  background: transparent;
+}
+
+.bu:hover:before {
+  opacity: 1;
+}
+
+.bu:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(186,85,211);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+.open{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin:1.7% 0px 0px;
+  align-items:flex-end;
+  height: 100%;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.list{
+  position: absolute;
+  margin: 10% 0px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ul{
+  width: 70%;
+  display: flex;
+  background-color: rgb(245, 245, 245);
+}
+.set{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.swether{
+  font-size: x-large;
+  display: flex;
+  margin: 10px 0px 0px;
+}
+.boxes{
+  margin: 8px 10px 0px 0px;
 }

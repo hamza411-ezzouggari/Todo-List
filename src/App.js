@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
+import List from './List';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state={
+    books:[],
+  }
+  onAdd = (book)=>{
+    var {books }= this.state;
+    var newBooks = books.map((x)=>{return x});
+    newBooks.push(book);
+    this.setState({books:newBooks})
+  }
+  clear = (b)=>{
+    var {books} = this.state;
+    var newBooks = [...books];
+    newBooks=newBooks.filter((X)=>{
+      console.log(X);
+      console.log(b);
+      return X.title!==b.title;
+    })
+    console.log(newBooks);
+    this.setState({books:newBooks})
+  }
+  render(){
+    return(
+      <div className="tout">
+        <div className="context">
+              <Navbar />
+              <List  onAdd={this.onAdd}  books={this.state.books} c={this.clear}/>
+          
+        </div>
+      </div> 
+    );
+  }
 }
-
 export default App;
